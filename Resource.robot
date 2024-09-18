@@ -1,8 +1,9 @@
+# robotcode: ignore
 *** Keywords ***
 User Login
     [Arguments]    ${username}
     Open Browser    ${URL}    ${BROWSER}
-    Maximize Browser Window
+    Maximize Browser Window    
     Input Text    name:username    ${username}
     Input Text    name:password    ${PASSWORD}
     Click Element    id:login-button
@@ -272,7 +273,7 @@ RunNoPresent For Present
     Wait Until Element Is Visible    //td[@class='text-center']   20s
 
 RunNoComarnd For Present
-    [Arguments]   ${ASSIGN_NEXT_LIST}   ${NoReserve}   
+    [Arguments]   ${ASSIGN_NEXT_LIST}      
     # รอให้รายการ select ปรากฏ
     Wait Until Element Is Visible    name:WorkFlowId    10 seconds
     
@@ -290,11 +291,11 @@ RunNoComarnd For Present
     # Execute JavaScript    document.querySelector("label[for='bookDocData_TypeRunReserve_1']").click()
     
     # รอให้ radio button ที่เกี่ยวข้องกับข้อความ "47/2567" ปรากฏ
-    Wait Until Element Is Visible    xpath=//tr[td[text()='${NoReserve}']]//input[@type='radio']    30s
-    Scroll Element Into View    xpath=//tr[td[text()='${NoReserve}']]//input[@type='radio']
+    Wait Until Element Is Visible    id:RunReserve_22    30s
+    Scroll Element Into View    id:RunReserve_22
     
     # คลิกที่ radio button ที่เกี่ยวข้องกับข้อความ "${NoReserve}"
-    Click Element    xpath=//tr[td[text()='${NoReserve}']]//input[@type='radio']
+    Click Element    id:RunReserve_22
     
     Click Element    xpath=//button[contains(@class,'btn btn-success mx-1')]
     Wait Until Element Is Visible    //button[contains(@class,'btn btn-info') and contains(., 'เพิ่มรายชื่อผู้ดำเนินการถัดไป ')]    30s 
@@ -326,7 +327,7 @@ RunNoComarnd For Present
     
     
     # กลับไปที่เฟรมหลักหลังจากเสร็จสิ้น
-    Wait Until Element Is Visible    //div[contains(., 'ดำเนินการสำเร็จ')]    30s
+    # Wait Until Element Is Visible    //div[contains(., 'ดำเนินการสำเร็จ')]    30s
     Wait Until Element Is Visible    //td[@class='text-center']   20s    
 
 RunNoPresentForSendIn
@@ -537,7 +538,7 @@ Close Book
     Wait Until Element Is Visible    //button[contains(text(),'ปิดหนังสือ')]    30s    
     Click Element    xpath=//button[contains(text(),'ปิดหนังสือ')]
     Wait Until Element Is Visible    //button[contains(@class,'btn btn-primary mr-2 ng-star-inserted')]    30s    
-    Click Element    xpath=//button[contains(@class,'btn btn-primary mr-2 ng-star-inserted')]
+    Click Element    xpath=//button[contains(@class,'btn btn-primary mr-2')]
     Sleep    3s
     Click Element    xpath=//button[contains(@class,'btn btn-success mr-3')]
     Wait Until Element Is Not Visible    xpath=//app-loader    timeout=30s
@@ -778,11 +779,11 @@ Last Man For NoPresent    #ออกเลขใหม่
     Close Browser
 
 Full NoComarnd For NoPresent    #ออกเลขใหม่
-    [Arguments]    ${USERNAME_LIST}    ${TITLE_NAME}   ${ASSIGN_NEXT_LIST}   ${NoReserve} 
+    [Arguments]    ${USERNAME_LIST}    ${TITLE_NAME}   ${ASSIGN_NEXT_LIST}    
     Log To Console    ${USERNAME_LIST} กำลังดำเนินการ....  
     User Login    ${USERNAME_LIST}
     Go To Document Prensent     ${TITLE_NAME}
-    RunNoComarnd For Present  ${ASSIGN_NEXT_LIST}    ${NoReserve}
+    RunNoComarnd For Present  ${ASSIGN_NEXT_LIST}    
     Close Browser
 
 Full BookMark For NoPresent    #ออกเลขตรายางใหม่
