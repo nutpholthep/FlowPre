@@ -1,0 +1,648 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1 (Python 3.12.0 on win32)" generated="2024-09-18T17:21:22.192086" rpa="false" schemaversion="5">
+<suite id="s1" name="TC-PresentFlow" source="C:\work\FlowPre\TC-PresentFlow.robot">
+<test id="s1-t1" name="ส่งคืนคนที่ 8" line="109">
+<doc>ส่งคืน สำหรับผู้ใช้ phansak_k</doc>
+<status status="FAIL" start="2024-09-18T17:21:22.388900" elapsed="0.000715">Test cannot be empty.</status>
+</test>
+<test id="s1-t2" name="ส่งคืนคนที่ 9" line="122">
+<doc>ส่งคืน สำหรับผู้ใช้ nalinee_c</doc>
+<status status="FAIL" start="2024-09-18T17:21:22.390673" elapsed="0.000965">Test cannot be empty.</status>
+</test>
+<test id="s1-t3" name="ส่งกลับมา คนที่ 4 ออกเลขคำสั่ง" line="170">
+<kw name="Full NoComarnd For NoPresent" owner="Resource">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${USERNAME_LIST} กำลังดำเนินการ....</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-09-18T17:21:22.395642" elapsed="0.000000"/>
+</kw>
+<kw name="User Login" owner="Resource">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-09-18T17:21:22.396644" level="INFO">Opening browser 'Chrome' to base url 'https://chon.ecm.in.th/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-09-18T17:21:22.396644" elapsed="2.626693"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-09-18T17:21:25.023337" elapsed="0.068141"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-18T17:21:25.092480" level="INFO">Typing text 'nattanan_n' into text field 'name:username'.</msg>
+<arg>name:username</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-18T17:21:25.091478" elapsed="0.176582"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-18T17:21:25.269121" level="INFO">Typing text '3710f92c9aTOSH' into text field 'name:password'.</msg>
+<arg>name:password</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-18T17:21:25.268060" elapsed="0.179235"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-18T17:21:25.448354" level="INFO">Clicking element 'id:login-button'.</msg>
+<arg>id:login-button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-18T17:21:25.448354" elapsed="0.939360"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="0"]</arg>
+<arg>60s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-18T17:21:26.387714" elapsed="11.719019"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-18T17:21:38.106733" level="INFO">Clicking element 'id:0'.</msg>
+<arg>id:0</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-18T17:21:38.106733" elapsed="0.177067"/>
+</kw>
+<arg>${USERNAME_LIST}</arg>
+<status status="PASS" start="2024-09-18T17:21:22.396644" elapsed="15.887156"/>
+</kw>
+<kw name="Go To Document Prensent" owner="Resource">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'item') and contains(., 'แฟ้มนำเสนอ')]</arg>
+<arg>60 seconds</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-18T17:21:38.284802" elapsed="1.628882"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-18T17:21:39.914699" level="INFO">Clicking element 'xpath=//div[contains(@class, 'item') and contains(., 'แฟ้มนำเสนอ')]'.</msg>
+<arg>xpath=//div[contains(@class, 'item') and contains(., 'แฟ้มนำเสนอ')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-18T17:21:39.914699" elapsed="0.065709"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id:20</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-18T17:21:39.980408" elapsed="0.026045"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-18T17:21:40.006453" level="INFO">Clicking element 'id:20'.</msg>
+<arg>id:20</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-18T17:21:40.006453" elapsed="0.082011"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//iframe[contains(@src, 'https://chon-doc.ecm.in.th')]</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-09-18T17:21:40.088464" elapsed="0.093757"/>
+</kw>
+<kw name="Select Frame" owner="SeleniumLibrary">
+<msg time="2024-09-18T17:21:40.182221" level="INFO">Selecting frame 'xpath=//iframe[contains(@src, 'https://chon-doc.ecm.in.th')]'.</msg>
+<arg>xpath=//iframe[contains(@src, 'https://chon-doc.ecm.in.th')]</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<status status="PASS" start="2024-09-18T17:21:40.182221" elapsed="2.361024"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-18T17:21:44.543632" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-18T17:21:42.543245" elapsed="2.000387"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//p[contains(normalize-space(text()),'${TittleName}')]</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-18T17:21:44.544665" elapsed="0.045667"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=//p[contains(normalize-space(text()),'${TittleName}')]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2024-09-18T17:21:44.591432" elapsed="0.326692"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-18T17:21:44.919176" level="INFO">Clicking element 'xpath=//p[contains(normalize-space(text()),'ทดสอบเสนอส่งคืน(กองศึกษา)1809-01')]/following::button[contains(@class, 'button-detail')]'.</msg>
+<arg>xpath=//p[contains(normalize-space(text()),'${TittleName}')]/following::button[contains(@class, 'button-detail')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-18T17:21:44.918124" elapsed="0.145030"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-18T17:21:47.064707" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-18T17:21:45.064157" elapsed="2.000550"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id:ngb-nav-6</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-18T17:21:47.064707" elapsed="0.035040"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-18T17:21:47.099747" level="INFO">Clicking element 'id:ngb-nav-6'.</msg>
+<arg>id:ngb-nav-6</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-18T17:21:47.099747" elapsed="0.124285"/>
+</kw>
+<arg>${TITLE_NAME}</arg>
+<status status="PASS" start="2024-09-18T17:21:38.284802" elapsed="8.939230"/>
+</kw>
+<kw name="RunNoComarnd For Present" owner="Resource">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>name:WorkFlowId</arg>
+<arg>10 seconds</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-18T17:21:47.225063" elapsed="0.282933"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2024-09-18T17:21:47.507996" level="INFO">Selecting options from selection list 'name=WorkFlowId' by label ส่งต่อ.</msg>
+<arg>name=WorkFlowId</arg>
+<arg>ส่งต่อ</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2024-09-18T17:21:47.507996" elapsed="0.123535"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-18T17:21:50.632753" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-18T17:21:47.631531" elapsed="3.001222"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-18T17:21:50.632753" level="INFO">Clicking element 'xpath=//button[contains(@class,'btn btn-info ng-star-inserted') and contains(., 'เพิ่มเลขที่หนังสือ')]'.</msg>
+<arg>xpath=//button[contains(@class,'btn btn-info ng-star-inserted') and contains(., 'เพิ่มเลขที่หนังสือ')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-18T17:21:50.632753" elapsed="0.105181"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//label[@for='bookDocData_TypeRunReserve_1']</arg>
+<arg>10 seconds</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-18T17:21:50.737934" elapsed="0.246250"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=//label[@for='bookDocData_TypeRunReserve_1']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2024-09-18T17:21:50.984184" elapsed="0.352015"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-18T17:21:51.337194" level="INFO">Clicking element 'xpath=//label[@for='bookDocData_TypeRunReserve_1']'.</msg>
+<arg>xpath=//label[@for='bookDocData_TypeRunReserve_1']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-18T17:21:51.336199" elapsed="0.082544"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//tr[td[text()='${NoReserve}']]//input[@type='radio']</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-18T17:21:51.418743" elapsed="0.251921"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=//tr[td[text()='${NoReserve}']]//input[@type='radio']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2024-09-18T17:21:51.670664" elapsed="0.327797"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-18T17:21:51.999408" level="INFO">Clicking element 'xpath=//tr[td[text()='84/2567']]//input[@type='radio']'.</msg>
+<arg>xpath=//tr[td[text()='${NoReserve}']]//input[@type='radio']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-18T17:21:51.998461" elapsed="0.165447"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-18T17:21:52.164891" level="INFO">Clicking element 'xpath=//button[contains(@class,'btn btn-success mx-1')]'.</msg>
+<arg>xpath=//button[contains(@class,'btn btn-success mx-1')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-18T17:21:52.163908" elapsed="0.109354"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//button[contains(@class,'btn btn-info') and contains(., 'เพิ่มรายชื่อผู้ดำเนินการถัดไป ')]</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-18T17:21:52.273262" elapsed="0.022957"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=//button[contains(@class,'btn btn-info') and contains(., 'เพิ่มรายชื่อผู้ดำเนินการถัดไป ')]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2024-09-18T17:21:52.297254" elapsed="0.330443"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2024-09-18T17:21:52.746009" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="clicked-paragraph.png"&gt;&lt;img src="clicked-paragraph.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>clicked-paragraph.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2024-09-18T17:21:52.628684" elapsed="0.117325"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-18T17:21:52.746970" level="INFO">Clicking element 'xpath=//button[contains(@class,'btn btn-info') and contains(., 'เพิ่มรายชื่อผู้ดำเนินการถัดไป ')]'.</msg>
+<arg>xpath=//button[contains(@class,'btn btn-info') and contains(., 'เพิ่มรายชื่อผู้ดำเนินการถัดไป ')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-18T17:21:52.746009" elapsed="0.099258"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//app-loader</arg>
+<arg>timeout=30s</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2024-09-18T17:21:52.845267" elapsed="0.269881"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-18T17:21:53.116109" level="INFO">Typing text 'ภิญญดา ต้นจันทน์' into text field 'name:Dateil'.</msg>
+<arg>name:Dateil</arg>
+<arg>${ASSIGN_NEXT_LIST}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-18T17:21:53.116109" elapsed="0.254184"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-18T17:21:53.370293" level="INFO">Clicking element 'class:fa-search'.</msg>
+<arg>class:fa-search</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-18T17:21:53.370293" elapsed="0.109530"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//tr[@class='ng-star-inserted']</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-18T17:21:53.479823" elapsed="0.026998"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//label[@for='data_Index_0' and contains(text(), '${ASSIGN_NEXT_LIST}')]</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-18T17:21:53.506821" elapsed="0.235472"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-18T17:21:53.743294" level="INFO">Clicking element '//label[@for='data_Index_0' and contains(text(), 'ภิญญดา ต้นจันทน์')]'.</msg>
+<arg>//label[@for='data_Index_0' and contains(text(), '${ASSIGN_NEXT_LIST}')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-18T17:21:53.742293" elapsed="0.096516"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>//label[contains(@class, 'mb-0')]</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-09-18T17:21:53.838809" elapsed="0.014000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-18T17:21:53.852809" level="INFO">Clicking element 'xpath=//button[contains(@class,'btn btn-success mx-1')]'.</msg>
+<arg>xpath=//button[contains(@class,'btn btn-success mx-1')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-18T17:21:53.852809" elapsed="0.076523"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//button[contains(@class, 'btn btn-primary mr-2') and contains(text(), 'ตกลง')]</arg>
+<arg>10 seconds</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-18T17:21:53.929332" elapsed="0.026992"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>//button[contains(@class, 'btn btn-primary mr-2') and contains(text(), 'ตกลง')]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2024-09-18T17:21:53.956324" elapsed="0.323102"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-18T17:21:54.279426" level="INFO">Clicking element 'xpath=//button[contains(@class, 'btn btn-primary mr-2') and contains(text(), 'ตกลง')]'.</msg>
+<arg>xpath=//button[contains(@class, 'btn btn-primary mr-2') and contains(text(), 'ตกลง')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-18T17:21:54.279426" elapsed="0.098401"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//div[contains(@class, 'modal-footer')]</arg>
+<arg>10 seconds</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-18T17:21:54.378782" elapsed="0.029700"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'modal-footer')]//button[contains(@class, 'btn btn-success') and contains(text(), 'ตกลง')]</arg>
+<arg>10 seconds</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-18T17:21:54.408482" elapsed="0.026657"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'modal-footer')]//button[contains(@class, 'btn btn-success') and contains(text(), 'ตกลง')]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2024-09-18T17:21:54.435139" elapsed="0.346791"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2024-09-18T17:21:54.781930" level="INFO">Executing JavaScript:
+document.evaluate("//div[contains(@class, 'modal-footer')]//button[contains(@class, 'btn btn-success') and contains(text(), 'ตกลง')]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.click()
+Without any arguments.</msg>
+<arg>document.evaluate("//div[contains(@class, 'modal-footer')]//button[contains(@class, 'btn btn-success') and contains(text(), 'ตกลง')]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.click()</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2024-09-18T17:21:54.781930" elapsed="0.020001"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2024-09-18T17:22:25.079893" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-09-18T17:22:25.079893" level="FAIL">Element '//div[contains(., 'ดำเนินการสำเร็จ')]' not visible after 30 seconds.</msg>
+<arg>//div[contains(., 'ดำเนินการสำเร็จ')]</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2024-09-18T17:21:54.801931" elapsed="30.280255">Element '//div[contains(., 'ดำเนินการสำเร็จ')]' not visible after 30 seconds.</status>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//td[@class='text-center']</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2024-09-18T17:22:25.083198" elapsed="0.000000"/>
+</kw>
+<arg>${ASSIGN_NEXT_LIST}</arg>
+<arg>${NoReserve}</arg>
+<status status="FAIL" start="2024-09-18T17:21:47.225063" elapsed="37.858135">Element '//div[contains(., 'ดำเนินการสำเร็จ')]' not visible after 30 seconds.</status>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" start="2024-09-18T17:22:25.083198" elapsed="0.000000"/>
+</kw>
+<arg>${USERNAME_LIST}[4]</arg>
+<arg>${TITLE_NAME}</arg>
+<arg>${ASSIGN_NEXT_LIST}[0]</arg>
+<arg>84/2567</arg>
+<status status="FAIL" start="2024-09-18T17:21:22.394681" elapsed="62.688517">Element '//div[contains(., 'ดำเนินการสำเร็จ')]' not visible after 30 seconds.</status>
+</kw>
+<doc>ส่งกลับมาหน้าห้อง สำหรับผู้ใช้ nalinee_c</doc>
+<status status="FAIL" start="2024-09-18T17:21:22.392638" elapsed="62.691619">Element '//div[contains(., 'ดำเนินการสำเร็จ')]' not visible after 30 seconds.</status>
+</test>
+<test id="s1-t4" name="ปิดหนังสือ" line="174">
+<kw name="Last Man For NoPresent" owner="Resource">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${USERNAME_LIST} กำลังดำเนินการ....</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-09-18T17:22:25.088265" elapsed="0.001079"/>
+</kw>
+<kw name="User Login" owner="Resource">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-09-18T17:22:25.090489" level="INFO">Opening browser 'Chrome' to base url 'https://chon.ecm.in.th/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-09-18T17:22:25.090489" elapsed="2.721548"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-09-18T17:22:27.812037" elapsed="0.118101"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-18T17:22:27.931145" level="INFO">Typing text 'PINYADA_T' into text field 'name:username'.</msg>
+<arg>name:username</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-18T17:22:27.931145" elapsed="0.181481"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-18T17:22:28.112626" level="INFO">Typing text '3710f92c9aTOSH' into text field 'name:password'.</msg>
+<arg>name:password</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-18T17:22:28.112626" elapsed="0.213506"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-18T17:22:28.326132" level="INFO">Clicking element 'id:login-button'.</msg>
+<arg>id:login-button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-18T17:22:28.326132" elapsed="0.945925"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="0"]</arg>
+<arg>60s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-18T17:22:29.273056" elapsed="0.926969"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-18T17:22:30.200025" level="INFO">Clicking element 'id:0'.</msg>
+<arg>id:0</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-18T17:22:30.200025" elapsed="0.174809"/>
+</kw>
+<arg>${USERNAME_LIST}</arg>
+<status status="PASS" start="2024-09-18T17:22:25.089344" elapsed="5.286593"/>
+</kw>
+<kw name="Go To Document Prensent" owner="Resource">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'item') and contains(., 'แฟ้มนำเสนอ')]</arg>
+<arg>60 seconds</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-18T17:22:30.375937" elapsed="0.486972"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-18T17:22:30.863909" level="INFO">Clicking element 'xpath=//div[contains(@class, 'item') and contains(., 'แฟ้มนำเสนอ')]'.</msg>
+<arg>xpath=//div[contains(@class, 'item') and contains(., 'แฟ้มนำเสนอ')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-18T17:22:30.863909" elapsed="0.052537"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id:20</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-18T17:22:30.916446" elapsed="0.022000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-18T17:22:30.939476" level="INFO">Clicking element 'id:20'.</msg>
+<arg>id:20</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-18T17:22:30.939476" elapsed="0.052487"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//iframe[contains(@src, 'https://chon-doc.ecm.in.th')]</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-09-18T17:22:30.992964" elapsed="0.018999"/>
+</kw>
+<kw name="Select Frame" owner="SeleniumLibrary">
+<msg time="2024-09-18T17:22:31.011963" level="INFO">Selecting frame 'xpath=//iframe[contains(@src, 'https://chon-doc.ecm.in.th')]'.</msg>
+<arg>xpath=//iframe[contains(@src, 'https://chon-doc.ecm.in.th')]</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<status status="PASS" start="2024-09-18T17:22:31.011963" elapsed="3.446986"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-18T17:22:36.459370" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-18T17:22:34.458949" elapsed="2.000421"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//p[contains(normalize-space(text()),'${TittleName}')]</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-18T17:22:36.459370" elapsed="0.059346"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=//p[contains(normalize-space(text()),'${TittleName}')]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2024-09-18T17:22:36.519736" elapsed="0.363951"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-18T17:22:36.884752" level="INFO">Clicking element 'xpath=//p[contains(normalize-space(text()),'ทดสอบเสนอส่งคืน(กองศึกษา)1809-01')]/following::button[contains(@class, 'button-detail')]'.</msg>
+<arg>xpath=//p[contains(normalize-space(text()),'${TittleName}')]/following::button[contains(@class, 'button-detail')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-18T17:22:36.883687" elapsed="0.100912"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-18T17:22:38.985223" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-18T17:22:36.984599" elapsed="2.000624"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id:ngb-nav-6</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-18T17:22:38.985735" elapsed="0.036380"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-18T17:22:39.022115" level="INFO">Clicking element 'id:ngb-nav-6'.</msg>
+<arg>id:ngb-nav-6</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-18T17:22:39.022115" elapsed="0.166507"/>
+</kw>
+<arg>${TITLE_NAME}</arg>
+<status status="PASS" start="2024-09-18T17:22:30.375937" elapsed="8.812685"/>
+</kw>
+<kw name="Close Book" owner="Resource">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id:ngb-nav-6</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-18T17:22:39.189610" elapsed="0.042584"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-18T17:22:39.232194" level="INFO">Clicking element 'id:ngb-nav-6'.</msg>
+<arg>id:ngb-nav-6</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-18T17:22:39.232194" elapsed="0.339787"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//button[contains(text(),'ปิดหนังสือ')]</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-18T17:22:39.571981" elapsed="0.028914"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-18T17:22:39.602013" level="INFO">Clicking element 'xpath=//button[contains(text(),'ปิดหนังสือ')]'.</msg>
+<arg>xpath=//button[contains(text(),'ปิดหนังสือ')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-18T17:22:39.600895" elapsed="0.208921"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//button[contains(@class,'btn btn-primary mr-2 ng-star-inserted')]</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-18T17:22:39.811070" elapsed="0.026028"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-18T17:22:39.837098" level="INFO">Clicking element 'xpath=//button[contains(@class,'btn btn-primary mr-2 ng-star-inserted')]'.</msg>
+<arg>xpath=//button[contains(@class,'btn btn-primary mr-2 ng-star-inserted')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-18T17:22:39.837098" elapsed="0.129530"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-18T17:22:42.967049" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-18T17:22:39.966628" elapsed="3.000421"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-18T17:22:42.967049" level="INFO">Clicking element 'xpath=//button[contains(@class,'btn btn-success mr-3')]'.</msg>
+<arg>xpath=//button[contains(@class,'btn btn-success mr-3')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-18T17:22:42.967049" elapsed="0.103263"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//app-loader</arg>
+<arg>timeout=30s</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2024-09-18T17:22:43.071310" elapsed="1.149451"/>
+</kw>
+<kw name="Unselect Frame" owner="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" start="2024-09-18T17:22:44.220761" elapsed="0.003969"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'item') and contains(., 'แฟ้มนำเสนอ')]</arg>
+<arg>60 seconds</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-18T17:22:44.224730" elapsed="0.021140"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-18T17:22:44.246871" level="INFO">Clicking element 'xpath=//div[contains(@class, 'item') and contains(., 'แฟ้มนำเสนอ')]'.</msg>
+<arg>xpath=//div[contains(@class, 'item') and contains(., 'แฟ้มนำเสนอ')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-18T17:22:44.246871" elapsed="0.062110"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id:20</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-18T17:22:44.309944" elapsed="0.021230"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-18T17:22:44.332418" level="INFO">Clicking element 'id:20'.</msg>
+<arg>id:20</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-18T17:22:44.331174" elapsed="0.053631"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//iframe[contains(@src, 'https://chon-doc.ecm.in.th')]</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-09-18T17:22:44.384805" elapsed="0.012194"/>
+</kw>
+<kw name="Select Frame" owner="SeleniumLibrary">
+<msg time="2024-09-18T17:22:44.396999" level="INFO">Selecting frame 'xpath=//iframe[contains(@src, 'https://chon-doc.ecm.in.th')]'.</msg>
+<arg>xpath=//iframe[contains(@src, 'https://chon-doc.ecm.in.th')]</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<status status="PASS" start="2024-09-18T17:22:44.396999" elapsed="0.531678"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-18T17:22:44.929680" level="INFO">Clicking element 'id:ngb-nav-2'.</msg>
+<arg>id:ngb-nav-2</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-18T17:22:44.928677" elapsed="0.266122"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//p[contains(normalize-space(text()),'${TittleName}')]</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-18T17:22:45.194799" elapsed="0.449658"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=//p[contains(normalize-space(text()),'${TittleName}')]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2024-09-18T17:22:45.644457" elapsed="0.315313"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-18T17:22:45.959770" level="INFO">Clicking element 'xpath=//p[contains(normalize-space(text()),'ทดสอบเสนอส่งคืน(กองศึกษา)1809-01')]/following::button[contains(@class, 'button-detail')]'.</msg>
+<arg>xpath=//p[contains(normalize-space(text()),'${TittleName}')]/following::button[contains(@class, 'button-detail')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-18T17:22:45.959770" elapsed="0.114266"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-18T17:22:56.074387" level="INFO">Slept 10 seconds.</msg>
+<arg>10s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-18T17:22:46.074036" elapsed="10.000351"/>
+</kw>
+<arg>${TITLE_NAME}</arg>
+<status status="PASS" start="2024-09-18T17:22:39.188622" elapsed="16.886790"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-09-18T17:22:56.075412" elapsed="2.326239"/>
+</kw>
+<arg>${USERNAME_LIST}[0]</arg>
+<arg>${TITLE_NAME}</arg>
+<status status="PASS" start="2024-09-18T17:22:25.088265" elapsed="33.313386"/>
+</kw>
+<doc>ปิดหนังสือ สำหรับผู้ใช้ PINYADA_T</doc>
+<status status="PASS" start="2024-09-18T17:22:25.086226" elapsed="33.316951"/>
+</test>
+<kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2024-09-18T17:22:58.406640" elapsed="6.354184"/>
+</kw>
+<status status="FAIL" start="2024-09-18T17:21:22.194089" elapsed="102.566735"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="3" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="3" skip="0" id="s1" name="TC-PresentFlow">TC-PresentFlow</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
