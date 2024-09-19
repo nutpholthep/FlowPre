@@ -8,36 +8,38 @@ Suite Teardown      Close All Browsers
 *** Variables ***
 ${URL}                  https://chon.ecm.in.th/
 @{ASSIGN_NEXT_LIST}
-...                     ภัทรพงศ์ พรหมดีราช
-...                     ชาญชัย มนต์วิเศษ
-...                     ชมชนก เปรมพินิจ
-...                     กัญญา ตินตะบุระ
-...                     ทรงกิตติ โฉมจังหวัด
+...                     ศิวพร แสงเจริญ
+...                     อาริญา จารุธงชัย
+...                     นันทนา อุดมมั่นถาวร
+...                     นิรมล สิทธิไกรพงษ์
+...                     จิตราภรณ์ ทิงชิต
 ...                     กิตตินันท์ ไมตรี
 ...                     ดารัตน์ สุรักขกะ
+...                     โยธกา สังข์ทอง
+...                     มณฑา บุญวิสุทธานนท์
 ...                     พีระวัฒน์ ตระกูลคุณจักร
 ...                     เรวัต ผลลูกอินทร์
 ...                     นลินี จันทร์เกลี้ยง
 ...                     วิทยา คุณปลื้ม
-...                     นลินี จันทร์เกลี้ยง
 
 @{USERNAME_LIST}
-...                     pattarapong_p
-...                     chanchai_m
-...                     CHOMCHANOK_P
-...                     KANYA_T
-...                     songkitti_c
+...                     SIWAPORN_S
+...                     ariya_j
+...                     nantana_u
+...                     niramon_s
+...                     jitraporn_t
 ...                     KITTINAN_M
 ...                     DARAT_S
+...                     yotaga_s
+...                     montha_b
 ...                     PERAWAT_T
 ...                     revat_p
 ...                     nalinee_c
 ...                     vitaya_k
-...                     nalinee_c
 
 ${PASSWORD}             3710f92c9aTOSH
 ${BROWSER}              Chrome
-${TITLE_NAME}           ทดสอบเสนอส่งคืน(สำนักช่าง)1809-01
+${TITLE_NAME}           ทดสอบเสนอส่งคืน(สำนักปลัดฝ่ายนิติการ)1909-01
 ${NoReserve}            90/2567
 
 
