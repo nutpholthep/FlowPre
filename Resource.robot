@@ -202,7 +202,7 @@ Recall
 RunNoPresent
     [Arguments]   ${ASSIGN_NEXT_LIST} 
       # รอให้รายการ select ปรากฏ
-    Wait Until Element Is Visible    name:WorkFlowId    10 seconds
+    Wait Until Element Is Visible    name:WorkFlowId    30 seconds
     
     # เลือกตัวเลือกจากรายการ select ตาม label
     Select From List By Label    name=WorkFlowId    ส่งต่อ
@@ -222,14 +222,14 @@ RunNoPresent
     Sleep    3s
     Click Element    class:fa-search
 
-    Wait Until Element Is Visible    //tr[@class='ng-star-inserted']    10s
+    Wait Until Element Is Visible    //tr[@class='ng-star-inserted']    30s
     Wait Until Element Is Visible    //label[@for='data_Index_0' and contains(text(), '${ASSIGN_NEXT_LIST}')]    15s
     # คลิกที่ <label> ที่ตรงตามเงื่อนไข
     Click Element    //label[@for='data_Index_0' and contains(text(), '${ASSIGN_NEXT_LIST}')]
     # รอให้การกระทำที่เกิดขึ้นหลังคลิกเสร็จสมบูรณ์
     Wait Until Page Contains Element    //label[contains(@class, 'mb-0')]
     Click Element    xpath=//button[contains(@class,'btn btn-success mx-1')]
-    Wait Until Element Is Visible    //button[contains(@class, 'btn btn-primary mr-1') and contains(text(), 'ตกลง')]    10 seconds
+    Wait Until Element Is Visible    //button[contains(@class, 'btn btn-primary mr-1') and contains(text(), 'ตกลง')]    30 seconds
     Scroll Element Into View    //button[contains(@class, 'btn btn-primary mr-1') and contains(text(), 'ตกลง')]    
     Click Element    xpath=//button[contains(@class, 'btn btn-primary mr-1') and contains(text(), 'ตกลง')]
     Click Element    xpath=//button[contains(@class,'btn btn-success mr-3')]
@@ -237,7 +237,7 @@ RunNoPresent
 RunNoPresent For Present
     [Arguments]   ${ASSIGN_NEXT_LIST} 
       # รอให้รายการ select ปรากฏ
-    Wait Until Element Is Visible    name:WorkFlowId    10 seconds
+    Wait Until Element Is Visible    name:WorkFlowId    30 seconds
     
     # เลือกตัวเลือกจากรายการ select ตาม label
     Select From List By Label    name=WorkFlowId    ส่งต่อ
@@ -257,7 +257,45 @@ RunNoPresent For Present
     Sleep    3s
     Click Element    class:fa-search
 
-    Wait Until Element Is Visible    //tr[@class='ng-star-inserted']    10s
+    Wait Until Element Is Visible    //tr[@class='ng-star-inserted']    30s
+    Wait Until Element Is Visible    //label[@for='data_Index_0' and contains(text(), '${ASSIGN_NEXT_LIST}')]    15s
+    # คลิกที่ <label> ที่ตรงตามเงื่อนไข
+    Click Element    //label[@for='data_Index_0' and contains(text(), '${ASSIGN_NEXT_LIST}')]
+    # รอให้การกระทำที่เกิดขึ้นหลังคลิกเสร็จสมบูรณ์
+    Wait Until Page Contains Element    //label[contains(@class, 'mb-0')]
+    Click Element    xpath=//button[contains(@class,'btn btn-success mx-1')]
+    Wait Until Element Is Visible    //button[contains(@class, 'btn btn-primary mr-2') and contains(text(), 'ตกลง')]    20 seconds
+    Scroll Element Into View    //button[contains(@class, 'btn btn-primary mr-2') and contains(text(), 'ตกลง')]    
+    Click Element    xpath=//button[contains(@class, 'btn btn-primary mr-2') and contains(text(), 'ตกลง')]
+    Click Element    xpath=//button[contains(@class,'btn btn-success mr-3')]
+     # กลับไปที่เฟรมหลักหลังจากเสร็จสิ้น
+    Wait Until Element Is Not Visible    xpath=//app-loader    timeout=60s
+    Wait Until Element Is Visible    //td[@class='text-center']   20s
+
+RunNoPresent For Present Only Nitikan
+    [Arguments]   ${ASSIGN_NEXT_LIST} 
+      # รอให้รายการ select ปรากฏ
+    Wait Until Element Is Visible    name:WorkFlowId    30 seconds
+    
+    # เลือกตัวเลือกจากรายการ select ตาม label
+    Select From List By Label    name=WorkFlowId     ฝ่ายนิติการ ส่งเสนอเรื่อง 
+    Sleep    3s
+    Scroll Element Into View    class:fa-plus-circle
+    Capture Page Screenshot    clicked-paragraph.png
+    Click Element    xpath=//button[contains(@class,'btn btn-info ng-star-inserted') and contains(., 'เพิ่มเลขที่หนังสือ')]
+    Sleep    2s
+
+    Click Element    xpath=//button[contains(@class,'btn btn-success mx-1')]
+    Wait Until Element Is Visible    //button[contains(@class,'btn btn-info') and contains(., 'เพิ่มรายชื่อผู้ดำเนินการถัดไป ')]    30s 
+    Scroll Element Into View    xpath=//button[contains(@class,'btn btn-info') and contains(., 'เพิ่มรายชื่อผู้ดำเนินการถัดไป ')]
+    Capture Page Screenshot    clicked-paragraph.png
+    Click Element    xpath=//button[contains(@class,'btn btn-info') and contains(., 'เพิ่มรายชื่อผู้ดำเนินการถัดไป ')]
+    Wait Until Element Is Not Visible    xpath=//app-loader    timeout=60s
+    Input Text    name:Dateil    ${ASSIGN_NEXT_LIST} 
+    Sleep    3s
+    Click Element    class:fa-search
+
+    Wait Until Element Is Visible    //tr[@class='ng-star-inserted']    30s
     Wait Until Element Is Visible    //label[@for='data_Index_0' and contains(text(), '${ASSIGN_NEXT_LIST}')]    15s
     # คลิกที่ <label> ที่ตรงตามเงื่อนไข
     Click Element    //label[@for='data_Index_0' and contains(text(), '${ASSIGN_NEXT_LIST}')]
@@ -275,7 +313,7 @@ RunNoPresent For Present
 RunNoComarnd For Present
     [Arguments]   ${ASSIGN_NEXT_LIST}      
     # รอให้รายการ select ปรากฏ
-    Wait Until Element Is Visible    name:WorkFlowId    10 seconds
+    Wait Until Element Is Visible    name:WorkFlowId    30 seconds
     
     # เลือกตัวเลือกจากรายการ select ตาม label
     Select From List By Label    name=WorkFlowId    ส่งต่อ
@@ -283,7 +321,7 @@ RunNoComarnd For Present
     Click Element    xpath=//button[contains(@class,'btn btn-info ng-star-inserted') and contains(., 'เพิ่มเลขที่หนังสือ')]
     
     # รอให้ <label> ปรากฏและพร้อมสำหรับการคลิก
-    Wait Until Element Is Visible    xpath=//label[@for='bookDocData_TypeRunReserve_1']    10 seconds
+    Wait Until Element Is Visible    xpath=//label[@for='bookDocData_TypeRunReserve_1']    30 seconds
     
     # เลื่อนองค์ประกอบให้เข้ามุมมองและคลิกที่ <label>
     Scroll Element Into View    xpath=//label[@for='bookDocData_TypeRunReserve_1']
@@ -306,19 +344,19 @@ RunNoComarnd For Present
     Input Text    name:Dateil    ${ASSIGN_NEXT_LIST} 
     Click Element    class:fa-search
 
-    Wait Until Element Is Visible    //tr[@class='ng-star-inserted']    10s
+    Wait Until Element Is Visible    //tr[@class='ng-star-inserted']    30s
     Wait Until Element Is Visible    //label[@for='data_Index_0' and contains(text(), '${ASSIGN_NEXT_LIST}')]    15s
     # คลิกที่ <label> ที่ตรงตามเงื่อนไข
     Click Element    //label[@for='data_Index_0' and contains(text(), '${ASSIGN_NEXT_LIST}')]
     # รอให้การกระทำที่เกิดขึ้นหลังคลิกเสร็จสมบูรณ์
     Wait Until Page Contains Element    //label[contains(@class, 'mb-0')]
     Click Element    xpath=//button[contains(@class,'btn btn-success mx-1')]
-    Wait Until Element Is Visible    //button[contains(@class, 'btn btn-primary mr-2') and contains(text(), 'ตกลง')]    10 seconds
+    Wait Until Element Is Visible    //button[contains(@class, 'btn btn-primary mr-2') and contains(text(), 'ตกลง')]    30 seconds
     Scroll Element Into View    //button[contains(@class, 'btn btn-primary mr-2') and contains(text(), 'ตกลง')]    
     Click Element    xpath=//button[contains(@class, 'btn btn-primary mr-2') and contains(text(), 'ตกลง')]
     
     # รอให้โมดอลปรากฏและพร้อมสำหรับการคลิก
-    Wait Until Element Is Visible    //div[contains(@class, 'modal-footer')]    10 seconds
+    Wait Until Element Is Visible    //div[contains(@class, 'modal-footer')]    30 seconds
     # รอให้ปุ่ม "ตกลง" ภายใน modal-footer พร้อมสำหรับการคลิก
     Wait Until Element Is Visible    xpath=//div[contains(@class, 'modal-footer')]//button[contains(@class, 'btn btn-success') and contains(text(), 'ตกลง')]    10 seconds
     # เลื่อนให้ปุ่ม "ตกลง" อยู่ในมุมมองและใช้ JavaScript คลิกหากยังไม่สามารถคลิกได้โดยตรง
@@ -367,7 +405,7 @@ RunNoPresentForSendIn
     Click Element    xpath=//button[contains(@class, 'btn btn-primary mr-1') and contains(text(), 'ตกลง')]
     Click Element    xpath=//button[contains(@class,'btn btn-success mr-3')]
      # กลับไปที่เฟรมหลักหลังจากเสร็จสิ้น
-    Wait Until Element Is Visible    //div[contains(., 'ดำเนินการสำเร็จ')]    30s
+    # Wait Until Element Is Visible    //div[contains(., 'ดำเนินการสำเร็จ')]    30s
     Wait Until Element Is Visible    //td[@class='text-center']   20s
 
 RunReciveBookNo   #ออกเลขตรายางรับภายใน
@@ -405,7 +443,7 @@ RunReciveBookNo   #ออกเลขตรายางรับภายใน
     Click Element    xpath=//button[contains(@class, 'btn btn-primary mr-1') and contains(text(), 'ตกลง')]
     Click Element    xpath=//button[contains(@class,'btn btn-success mr-3')]
      # กลับไปที่เฟรมหลักหลังจากเสร็จสิ้น
-    Wait Until Element Is Visible    //div[contains(., 'ดำเนินการสำเร็จ')]    30s
+    # Wait Until Element Is Visible    //div[contains(., 'ดำเนินการสำเร็จ')]    30s
     Wait Until Element Is Visible    //td[@class='text-center']   20s
 
 RunBookMark For Present   #ออกเลขตรายางเสนอ
@@ -449,7 +487,8 @@ RunBookMark For Present   #ออกเลขตรายางเสนอ
     Click Element    xpath=//button[contains(@class, 'btn btn-primary mr-2') and contains(text(), 'ตกลง')]
     Click Element    xpath=//button[contains(@class,'btn btn-success mr-3')]
      # กลับไปที่เฟรมหลักหลังจากเสร็จสิ้น
-    Wait Until Element Is Visible    //div[contains(., 'ดำเนินการสำเร็จ')]    30s
+    # Wait Until Element Is Visible    //div[contains(., 'ดำเนินการสำเร็จ')]    30s
+    Wait Until Element Is Not Visible    xpath=//app-loader    timeout=60s
     Wait Until Element Is Visible    //td[@class='text-center']   20s
 
 RunBookMarkComarnd For Present    #ออกเลขตรายางเสนอ
@@ -490,7 +529,8 @@ RunBookMarkComarnd For Present    #ออกเลขตรายางเสน
     Click Element    xpath=//button[contains(@class, 'btn btn-primary mr-2') and contains(text(), 'ตกลง')]
     Click Element    xpath=//button[contains(@class,'btn btn-success mr-3')]
      # กลับไปที่เฟรมหลักหลังจากเสร็จสิ้น
-    Wait Until Element Is Visible    //div[contains(., 'ดำเนินการสำเร็จ')]    30s
+    # Wait Until Element Is Visible    //div[contains(., 'ดำเนินการสำเร็จ')]    30s
+    Wait Until Element Is Not Visible    xpath=//app-loader    timeout=60s
     Wait Until Element Is Visible    //td[@class='text-center']   20s
 
 Assign_For_Last
@@ -767,6 +807,14 @@ Full NoReceipt For NoPresent    #ออกเลขใหม่
     User Login    ${USERNAME_LIST}
     Go To Document Prensent     ${TITLE_NAME}
     RunNoPresent For Present  ${ASSIGN_NEXT_LIST}
+    Close Browser
+
+Full NoReceipt For NoPresent Only Nitikan    #ออกเลขใหม่
+    [Arguments]    ${USERNAME_LIST}    ${TITLE_NAME}   ${ASSIGN_NEXT_LIST} 
+    Log To Console    ${USERNAME_LIST} กำลังดำเนินการ....  
+    User Login    ${USERNAME_LIST}
+    Go To Document Prensent     ${TITLE_NAME}
+    RunNoPresent For Present Only Nitikan  ${ASSIGN_NEXT_LIST}
     Close Browser
 
 Last Man For NoPresent    #ออกเลขใหม่
