@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1 (Python 3.12.0 on win32)" generated="2024-09-19T13:06:48.363528" rpa="false" schemaversion="5">
+<suite id="s1" name="FlowPre" source="C:\work\FlowPre">
+<suite id="s1-s1" name="TEST" source="C:\work\FlowPre\TEST.robot">
+<test id="s1-s1-t1" name="Test Case with Retry" line="12">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Keyword A">
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-09-19T13:06:48.396213" level="INFO">กำลังรัน Keyword A</msg>
+<arg>กำลังรัน Keyword A</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-09-19T13:06:48.396213" elapsed="0.000000"/>
+</kw>
+<kw name="Fail" owner="BuiltIn">
+<msg time="2024-09-19T13:06:48.397213" level="FAIL">การทำงานของ Keyword A ล้มเหลว (สำหรับการทดสอบ)</msg>
+<arg>การทำงานของ Keyword A ล้มเหลว (สำหรับการทดสอบ)</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="FAIL" start="2024-09-19T13:06:48.396213" elapsed="0.002000">การทำงานของ Keyword A ล้มเหลว (สำหรับการทดสอบ)</status>
+</kw>
+<doc>ทำการดำเนินการที่อาจล้มเหลว</doc>
+<status status="FAIL" start="2024-09-19T13:06:48.395213" elapsed="0.003000">การทำงานของ Keyword A ล้มเหลว (สำหรับการทดสอบ)</status>
+</kw>
+<kw name="Keyword A">
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-09-19T13:06:53.402913" level="INFO">กำลังรัน Keyword A</msg>
+<arg>กำลังรัน Keyword A</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-09-19T13:06:53.401912" elapsed="0.002023"/>
+</kw>
+<kw name="Fail" owner="BuiltIn">
+<msg time="2024-09-19T13:06:53.405989" level="FAIL">การทำงานของ Keyword A ล้มเหลว (สำหรับการทดสอบ)</msg>
+<arg>การทำงานของ Keyword A ล้มเหลว (สำหรับการทดสอบ)</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="FAIL" start="2024-09-19T13:06:53.404973" elapsed="0.003023">การทำงานของ Keyword A ล้มเหลว (สำหรับการทดสอบ)</status>
+</kw>
+<doc>ทำการดำเนินการที่อาจล้มเหลว</doc>
+<status status="FAIL" start="2024-09-19T13:06:53.399211" elapsed="0.009896">การทำงานของ Keyword A ล้มเหลว (สำหรับการทดสอบ)</status>
+</kw>
+<msg time="2024-09-19T13:06:53.409107" level="FAIL">Keyword 'Keyword A' failed after retrying for 3 seconds. The last error was: การทำงานของ Keyword A ล้มเหลว (สำหรับการทดสอบ)</msg>
+<arg>3</arg>
+<arg>5s</arg>
+<arg>Keyword A</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="FAIL" start="2024-09-19T13:06:48.395213" elapsed="5.016443">Keyword 'Keyword A' failed after retrying for 3 seconds. The last error was: การทำงานของ Keyword A ล้มเหลว (สำหรับการทดสอบ)</status>
+</kw>
+<doc>ทดสอบการทำงานของ Keyword A และลองใหม่หากล้มเหลว</doc>
+<status status="FAIL" start="2024-09-19T13:06:48.393213" elapsed="5.020492">Keyword 'Keyword A' failed after retrying for 3 seconds. The last error was: การทำงานของ Keyword A ล้มเหลว (สำหรับการทดสอบ)</status>
+</test>
+<status status="FAIL" start="2024-09-19T13:06:48.389678" elapsed="5.027029"/>
+</suite>
+<status status="FAIL" start="2024-09-19T13:06:48.366489" elapsed="5.056745"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="FlowPre">FlowPre</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="TEST">FlowPre.TEST</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
