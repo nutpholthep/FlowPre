@@ -80,6 +80,35 @@ AssignNext
     # รอให้การกระทำที่เกิดขึ้นหลังคลิกเสร็จสมบูรณ์
     Wait Until Page Contains Element    //label[contains(@class, 'mb-0')]
     Click Element    xpath=//button[contains(@class,'btn btn-success mx-1')]
+    Wait Until Element Is Visible    //button[contains(@class, 'btn btn-primary') and contains(text(), 'ตกลง')]    10 seconds
+    Scroll Element Into View    //button[contains(@class, 'btn btn-primary') and contains(text(), 'ตกลง')]    
+    Click Element    xpath=//button[contains(@class, 'btn btn-primary') and contains(text(), 'ตกลง')]
+    Wait Until Element Is Visible    //button[contains(@class, 'btn btn-success') and contains(text(), 'ตกลง')]    10 seconds   
+    Click Element    xpath=//button[contains(@class, 'btn btn-success') and contains(text(), 'ตกลง')]
+    Wait Until Element Is Not Visible    xpath=//app-loader    timeout=60s
+
+
+Select Group For Assign
+    [Arguments]   ${ASSIGN_NEXT_LIST}    ${Group}   
+    Sleep    3s
+    Select From List By Label    name:WorkFlowId    ${Group} 
+    Wait Until Element Is Visible    //button[contains(@class,'btn btn-info') and contains(., 'เพิ่มรายชื่อผู้ดำเนินการถัดไป ')]    30s 
+    Scroll Element Into View    xpath=//button[contains(@class,'btn btn-info') and contains(., 'เพิ่มรายชื่อผู้ดำเนินการถัดไป ')]
+    Capture Page Screenshot    clicked-paragraph.png
+    Click Element    xpath=//button[contains(@class,'btn btn-info') and contains(., 'เพิ่มรายชื่อผู้ดำเนินการถัดไป ')]
+    Wait Until Element Is Not Visible    xpath=//app-loader    timeout=60s
+    Input Text    name:Dateil    ${ASSIGN_NEXT_LIST} 
+
+    Wait Until Element Is Visible    //div[contains(@class, 'modal-body-content')]    30s
+    Click Element    class:fa-search
+    
+    Wait Until Element Is Visible    //tr[@class='ng-star-inserted']    10s
+    Wait Until Element Is Visible    //label[@for='data_Index_0' and contains(text(), '${ASSIGN_NEXT_LIST}')]    15s
+    # คลิกที่ <label> ที่ตรงตามเงื่อนไข
+    Click Element    //label[@for='data_Index_0' and contains(text(), '${ASSIGN_NEXT_LIST}')]
+    # รอให้การกระทำที่เกิดขึ้นหลังคลิกเสร็จสมบูรณ์
+    Wait Until Page Contains Element    //label[contains(@class, 'mb-0')]
+    Click Element    xpath=//button[contains(@class,'btn btn-success mx-1')]
     Wait Until Element Is Visible    //button[contains(@class, 'btn btn-primary mr-1') and contains(text(), 'ตกลง')]    10 seconds
     Scroll Element Into View    //button[contains(@class, 'btn btn-primary mr-1') and contains(text(), 'ตกลง')]    
     Click Element    xpath=//button[contains(@class, 'btn btn-primary mr-1') and contains(text(), 'ตกลง')]
@@ -141,6 +170,19 @@ Pull Back
     Wait Until Element Is Visible    //button[contains(@class, 'btn btn-primary mr-1') and contains(text(), 'ตกลง')]    10 seconds
     Scroll Element Into View    //button[contains(@class, 'btn btn-primary mr-1') and contains(text(), 'ตกลง')]    
     Click Element    xpath=//button[contains(@class, 'btn btn-primary mr-1') and contains(text(), 'ตกลง')]
+    Wait Until Element Is Not Visible    xpath=//app-loader    timeout=60s
+    
+     # รอให้โมดอลปรากฏและพร้อมสำหรับการคลิก
+    Wait Until Element Is Visible    //div[contains(@class, 'modal-footer')]    10 seconds
+    # รอให้ปุ่ม "ตกลง" ภายใน modal-footer พร้อมสำหรับการคลิก
+    Wait Until Element Is Visible    xpath=//div[contains(@class, 'modal-footer')]//button[contains(@class, 'btn btn-success') and contains(text(), 'ตกลง')]    10 seconds
+    # คลิกที่ปุ่ม "ตกลง" ภายใน modal-footer
+    Click Element    xpath=//div[contains(@class, 'modal-footer')]//button[contains(@class, 'btn btn-success') and contains(text(), 'ตกลง')]
+    Wait Until Element Is Not Visible    xpath=//app-loader    timeout=60s
+    # กลับไปที่เฟรมหลักหลังจากเสร็จสิ้น
+    Wait Until Element Is Visible    xpath=//table[contains(@class, 'table')]    20s
+    Wait Until Element Is Visible    //td[@class='text-center']   20s
+
 
 Pull Back For Present
     Sleep    3s
@@ -278,7 +320,7 @@ RunNoPresent For Present Only Nitikan
     Wait Until Element Is Visible    name:WorkFlowId    30 seconds
     
     # เลือกตัวเลือกจากรายการ select ตาม label
-    Select From List By Label    name=WorkFlowId     ฝ่ายนิติการ ส่งเสนอเรื่อง 
+    Select From List By Label    name=WorkFlowId      ฝ่ายอื่นๆ สำนักปลัด ส่งเสนอเรื่อง    #ฝ่ายนิติการ ส่งเสนอเรื่อง 
     Sleep    3s
     Scroll Element Into View    class:fa-plus-circle
     Capture Page Screenshot    clicked-paragraph.png
@@ -421,7 +463,7 @@ RunReciveBookNo   #ออกเลขตรายางรับภายใน
     Wait Until Element Is Visible    xpath=//button[contains(@class,'btn-info') and contains(., 'เพิ่มเลขรับหนังสือ')]  
     Scroll Element Into View    xpath=//button[contains(@class,'btn-info') and contains(., 'เพิ่มเลขรับหนังสือ')]   
     Click Element    xpath=//button[contains(@class,'btn-info') and contains(., 'เพิ่มเลขรับหนังสือ')]
-    Sleep    2s
+    Wait Until Element Is Not Visible    xpath=//app-loader    timeout=60s
     Wait Until Element Is Visible    //button[contains(@class,'btn btn-info') and contains(., 'เพิ่มรายชื่อผู้ดำเนินการถัดไป ')]    30s 
     Scroll Element Into View    xpath=//button[contains(@class,'btn btn-info') and contains(., 'เพิ่มรายชื่อผู้ดำเนินการถัดไป ')]
     Capture Page Screenshot    clicked-paragraph.png
@@ -436,13 +478,14 @@ RunReciveBookNo   #ออกเลขตรายางรับภายใน
     # คลิกที่ <label> ที่ตรงตามเงื่อนไข
     Click Element    //label[@for='data_Index_0' and contains(text(), '${ASSIGN_NEXT_LIST}')]
     # รอให้การกระทำที่เกิดขึ้นหลังคลิกเสร็จสมบูรณ์
-    Wait Until Page Contains Element    //label[contains(@class, 'mb-0')]
+    Wait Until Page Contains Element    //label[contains(@class, 'mb-0')]    30s
     Click Element    xpath=//button[contains(@class,'btn btn-success mx-1')]
-    Wait Until Element Is Visible    //button[contains(@class, 'btn btn-primary mr-1') and contains(text(), 'ตกลง')]    10 seconds
+    Wait Until Element Is Visible    //button[contains(@class, 'btn btn-primary mr-1') and contains(text(), 'ตกลง')]    30 seconds
     Scroll Element Into View    //button[contains(@class, 'btn btn-primary mr-1') and contains(text(), 'ตกลง')]    
     Click Element    xpath=//button[contains(@class, 'btn btn-primary mr-1') and contains(text(), 'ตกลง')]
     Click Element    xpath=//button[contains(@class,'btn btn-success mr-3')]
      # กลับไปที่เฟรมหลักหลังจากเสร็จสิ้น
+     Wait Until Element Is Not Visible    xpath=//app-loader    timeout=60s
     # Wait Until Element Is Visible    //div[contains(., 'ดำเนินการสำเร็จ')]    30s
     Wait Until Element Is Visible    //td[@class='text-center']   20s
 
@@ -490,6 +533,7 @@ RunBookMark For Present   #ออกเลขตรายางเสนอ
     # Wait Until Element Is Visible    //div[contains(., 'ดำเนินการสำเร็จ')]    30s
     Wait Until Element Is Not Visible    xpath=//app-loader    timeout=60s
     Wait Until Element Is Visible    //td[@class='text-center']   20s
+
 
 RunBookMarkComarnd For Present    #ออกเลขตรายางเสนอ
     [Arguments]    ${ASSIGN_NEXT_LIST}    ${Text}    
@@ -611,11 +655,12 @@ Perform Actions For Other Users
         Close Browser
     END
 
-Case Pull back 
+Case Pull back   #ส่งคืนหน้ารับ
     [Arguments]    ${USERNAME_LIST}    ${TITLE_NAME}     
     User Login    ${USERNAME_LIST}
     Go To Document Receipt     ${TITLE_NAME}
-    Pull Back   
+    Pull Back 
+    Close Browser  
 
 
 First StepForSendIn
@@ -719,6 +764,43 @@ First Step For Presnt
     Wait Until Element Is Visible    //button[contains(@class, 'btn btn-primary mr-2') and contains(text(), 'ตกลง')]    30 seconds
     Scroll Element Into View    //button[contains(@class, 'btn btn-primary mr-2') and contains(text(), 'ตกลง')]    
     Click Element    xpath=//button[contains(@class, 'btn btn-primary mr-2') and contains(text(), 'ตกลง')]
+     # รอให้โมดอลปรากฏและพร้อมสำหรับการคลิก
+    Wait Until Element Is Visible    //div[contains(@class, 'modal-footer')]    10 seconds
+    # รอให้ปุ่ม "ตกลง" ภายใน modal-footer พร้อมสำหรับการคลิก
+    Wait Until Element Is Visible    xpath=//div[contains(@class, 'modal-footer')]//button[contains(@class, 'btn btn-success') and contains(text(), 'ตกลง')]    10 seconds
+    # คลิกที่ปุ่ม "ตกลง" ภายใน modal-footer
+    Click Element    xpath=//div[contains(@class, 'modal-footer')]//button[contains(@class, 'btn btn-success') and contains(text(), 'ตกลง')]
+    Wait Until Element Is Not Visible    xpath=//app-loader    timeout=60s
+    # กลับไปที่เฟรมหลักหลังจากเสร็จสิ้น
+    Wait Until Element Is Visible    xpath=//table[contains(@class, 'table')]    20s
+    Wait Until Element Is Visible    //td[@class='text-center']   20s
+
+First Step For Middle File
+    [Arguments]   ${ASSIGN_NEXT_LIST}   
+    Sleep    3s
+    Wait Until Element Is Visible    name:WorkFlowId    30s
+    Select From List By Label    name:WorkFlowId       ส่งใหม่ รับภายนอก(นำเข้าไฟล์)     
+    Wait Until Element Is Visible    //button[contains(@class,'btn btn-info') and contains(., 'เพิ่มรายชื่อผู้ดำเนินการถัดไป ')]    30s 
+    Scroll Element Into View    xpath=//button[contains(@class,'btn btn-info') and contains(., 'เพิ่มรายชื่อผู้ดำเนินการถัดไป ')]
+    Capture Page Screenshot    clicked-paragraph.png
+    Click Element    xpath=//button[contains(@class,'btn btn-info') and contains(., 'เพิ่มรายชื่อผู้ดำเนินการถัดไป ')]
+    Wait Until Element Is Not Visible    xpath=//app-loader    timeout=60s
+    Input Text    name:Dateil    ${ASSIGN_NEXT_LIST}
+    Wait Until Element Is Visible    name:Dateil    timeout=5s
+
+    Wait Until Element Is Visible    //div[contains(@class, 'modal-body-content')]    30s
+    Click Element    class:fa-search
+    
+    Wait Until Element Is Visible    //tr[@class='ng-star-inserted']    10s
+    Wait Until Element Is Visible    //label[@for='data_Index_0' and contains(text(), '${ASSIGN_NEXT_LIST}')]    15s
+    # คลิกที่ <label> ที่ตรงตามเงื่อนไข
+    Click Element    //label[@for='data_Index_0' and contains(text(), '${ASSIGN_NEXT_LIST}')]
+    # รอให้การกระทำที่เกิดขึ้นหลังคลิกเสร็จสมบูรณ์
+    Wait Until Page Contains Element    //label[contains(@class, 'mb-0')]
+    Click Element    xpath=//button[contains(@class,'btn btn-success mx-1')]
+    Wait Until Element Is Visible    //button[contains(@class, 'btn btn-primary mr-1') and contains(text(), 'ตกลง')]    30 seconds
+    Scroll Element Into View    //button[contains(@class, 'btn btn-primary mr-1') and contains(text(), 'ตกลง')]    
+    Click Element    xpath=//button[contains(@class, 'btn btn-primary mr-1') and contains(text(), 'ตกลง')]
      # รอให้โมดอลปรากฏและพร้อมสำหรับการคลิก
     Wait Until Element Is Visible    //div[contains(@class, 'modal-footer')]    10 seconds
     # รอให้ปุ่ม "ตกลง" ภายใน modal-footer พร้อมสำหรับการคลิก
@@ -841,6 +923,14 @@ Full BookMark For NoPresent    #ออกเลขตรายางใหม่
     RunBookMark For Present  ${ASSIGN_NEXT_LIST}
     Close Browser
 
+Full BookMark For Middle File    #ออกเลขตรายางใหม่
+    [Arguments]    ${USERNAME_LIST}    ${TITLE_NAME}   ${ASSIGN_NEXT_LIST} 
+    Log To Console    ${USERNAME_LIST} กำลังดำเนินการ....  
+    User Login    ${USERNAME_LIST}
+    Go To Document Receipt    ${TITLE_NAME}
+    RunReciveBookNo  ${ASSIGN_NEXT_LIST}
+    Close Browser
+
 Full BookMark For NoPresent Page 38    #ออกเลขตรายางใหม่
     [Arguments]    ${USERNAME_LIST}    ${TITLE_NAME}   ${ASSIGN_NEXT_LIST}   ${Text}   ${Condition} 
     Log To Console    ${USERNAME_LIST} กำลังดำเนินการ....  
@@ -875,12 +965,21 @@ First Man    #คนแรกของส่งภายนอกeForm
     Go To Document    ${TITLE_NAME}
     First Step    ${ASSIGN_NEXT_LIST} 
 
+
 First Man_ForSendIn    #คนแรกของส่งภายในeForm
     [Arguments]    ${USERNAME_LIST}    ${TITLE_NAME}   ${ASSIGN_NEXT_LIST} 
     Log To Console    ${USERNAME_LIST} กำลังดำเนินการ....  
     User Login    ${USERNAME_LIST}
     Go To Document    ${TITLE_NAME}
     First StepForSendIn    ${ASSIGN_NEXT_LIST} 
+
+Full First Man_For Recive File    #คนแรกของรับภายนอกไฟล์ธุรการกลาง
+    [Arguments]    ${USERNAME_LIST}    ${TITLE_NAME}   ${ASSIGN_NEXT_LIST} 
+    Log To Console    ${USERNAME_LIST} กำลังดำเนินการ....  
+    User Login    ${USERNAME_LIST}
+    Go To Document Receipt   ${TITLE_NAME}
+    First Step For Middle File    ${ASSIGN_NEXT_LIST}
+    Close Browser  
 
 First Man_ForSendInV2    #คนแรกของส่งภายในeForm
     [Arguments]    ${USERNAME_LIST}    ${TITLE_NAME}   ${ASSIGN_NEXT_LIST} 
@@ -922,6 +1021,7 @@ Close BookV2
     Click Element    xpath=//button[contains(@class,'btn btn-primary mr-1 ng-star-inserted')]
     Sleep    3s
     Click Element    xpath=//button[contains(@class,'btn btn-success mr-3')]
+    Wait Until Element Is Not Visible    xpath=//app-loader    timeout=60s
 
     Wait Until Element Is Visible    xpath=//table[contains(@class, 'table')]    20s
     Wait Until Element Is Visible    //td[@class='text-center']   20s
@@ -968,11 +1068,55 @@ Close BookRecive
     Click Element    xpath=//p[contains(normalize-space(text()),'${TittleName}')]/following::button[contains(@class, 'button-detail')]
     Sleep    10s
 
+Close BookReciveV2
+    [Arguments]    ${TittleName}    
+    Wait Until Element Is Visible    id:ngb-nav-6    30s
+    Click Element    id:ngb-nav-6
+    Wait Until Element Is Visible    //button[contains(text(),'ปิดหนังสือ')]    30s    
+    Click Element    xpath=//button[contains(text(),'ปิดหนังสือ')]
+    Wait Until Element Is Not Visible    xpath=//app-loader    timeout=60s
+    Wait Until Element Is Visible    //button[contains(@class,'btn btn-primary mr-1') and contains(.,'ตกลง')]    30s    
+    Click Element    xpath=//button[contains(@class,'btn btn-primary mr-1') and contains(.,'ตกลง')]
+    Click Element    xpath=//button[contains(@class,'btn btn-success mr-3')]
+    Wait Until Element Is Not Visible    xpath=//app-loader    timeout=60s
+
+    Unselect Frame
+    Wait Until Element Is Not Visible    xpath=//app-loader    timeout=60s
+    Wait Until Element Is Visible    xpath=//div[contains(@class, 'item') and contains(.,'รับหนังสือ')]    60s
+    # คลิกที่ข้อความ "รับหนังสือ"
+    Click Element    xpath=//div[contains(@class, 'item') and contains(.,'รับหนังสือ')]
+    Wait Until Element Is Visible    id:8    30s    
+    Click Element    id:8
+    Wait Until Page Contains Element    xpath=//iframe[contains(@src, 'https://chon-doc.ecm.in.th')]    30s
+    Select Frame    xpath=//iframe[contains(@src, 'https://chon-doc.ecm.in.th')]
+    Wait Until Element Is Visible    xpath=//p[contains(normalize-space(text()),'${TittleName}')]    30s
+    # เลื่อนหน้าให้เห็น <p> ก่อน
+    Scroll Element Into View    xpath=//p[contains(normalize-space(text()),'${TittleName}')]
+    # คลิกปุ่ม "รายละเอียด" ที่อยู่ในแถวของ <p> ที่มีข้อความที่กำหนด
+    Click Element    xpath=//p[contains(normalize-space(text()),'${TittleName}')]/following::button[contains(@class, 'button-detail')]
+    Sleep    10s
+
 Normal Recive_Assign   #รับหนังสือส่งต่อ
     [Arguments]    ${USERNAME_LIST}    ${TITLE_NAME}   ${ASSIGN_NEXT_LIST} 
     Log To Console    ${USERNAME_LIST} กำลังดำเนินการ....    
     User Login    ${USERNAME_LIST}
-    Print Page To Pdf    ./PDF/${USERNAME_LIST}.pdf
     Go To Document Receipt    ${TITLE_NAME}
     AssignNext    ${ASSIGN_NEXT_LIST} 
+    Close Browser
+ 
+Select Group For Send To   #รับหนังสือส่งต่อ
+    [Arguments]    ${USERNAME_LIST}    ${TITLE_NAME}   ${ASSIGN_NEXT_LIST}    ${Group} 
+    Log To Console    ${USERNAME_LIST} กำลังดำเนินการ....    
+    User Login    ${USERNAME_LIST}
+    Go To Document Receipt    ${TITLE_NAME}
+    Select Group For Assign   ${ASSIGN_NEXT_LIST}  ${Group}
+    Close Browser
+
+Full Close Book For Recive   #รับหนังสือปิดหนังสือ
+    [Arguments]    ${USERNAME_LIST}    ${TITLE_NAME}   
+    Log To Console    ${USERNAME_LIST} กำลังดำเนินการ....    
+    User Login    ${USERNAME_LIST}
+    Go To Document Receipt    ${TITLE_NAME}
+    Close BookReciveV2   ${TITLE_NAME}
+    Close Browser
  
