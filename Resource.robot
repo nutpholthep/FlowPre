@@ -180,6 +180,7 @@ Pull Back
     Click Element    xpath=//div[contains(@class, 'modal-footer')]//button[contains(@class, 'btn btn-success') and contains(text(), 'ตกลง')]
     Wait Until Element Is Not Visible    xpath=//app-loader    timeout=60s
     # กลับไปที่เฟรมหลักหลังจากเสร็จสิ้น
+    Wait Until Element Is Not Visible    xpath=//app-loader    timeout=60s
     Wait Until Element Is Visible    xpath=//table[contains(@class, 'table')]    20s
     Wait Until Element Is Visible    //td[@class='text-center']   20s
 
