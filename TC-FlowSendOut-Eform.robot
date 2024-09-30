@@ -39,11 +39,11 @@ ${URL}                  https://chon.ecm.in.th/
 ...                     ส่งระหว่างกอง กองการเจ้าหน้าที่
 ...                     ส่งระหว่างกอง กองสาธารณสุข
 
-${Flow}                 ส่งต่อ
+${Flow}                 ส่งภายในกอง
 
 ${PASSWORD}             3710f92c9aTOSH
 ${BROWSER}              Chrome
-${TITLE_NAME}           TestFlow(SendOut)Bot2309-01
+${TITLE_NAME}           TestFlow(SendOut)Bot2509-01
 ${NoReserve}            90/2567
 
 

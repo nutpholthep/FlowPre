@@ -69,10 +69,8 @@ AssignNext
     Click Element    xpath=//button[contains(@class,'btn btn-info') and contains(., 'เพิ่มรายชื่อผู้ดำเนินการถัดไป ')]
     Wait Until Element Is Not Visible    xpath=//app-loader    timeout=60s
     Input Text    name:Dateil    ${ASSIGN_NEXT_LIST} 
-
     Wait Until Element Is Visible    //div[contains(@class, 'modal-body-content')]    30s
     Click Element    class:fa-search
-    
     Wait Until Element Is Visible    //tr[@class='ng-star-inserted']    10s
     Wait Until Element Is Visible    //label[@for='data_Index_0' and contains(text(), '${ASSIGN_NEXT_LIST}')]    15s
     # คลิกที่ <label> ที่ตรงตามเงื่อนไข
